@@ -33,26 +33,4 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <framework src="AdSupport.framework" weak="true" />
         <framework src="AppTrackingTransparency.framework" weak="true" />
     </platform>
-
-    <platform name="android">
-        <preference name="ANDROID_PLAY_ADID_VERSION" default="17.0.+"/>
-
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Idfa">
-                <param name="android-package" value="by.chemerisuk.cordova.advertising.IdfaPlugin" />
-            </feature>
-        </config-file>
-
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.INTERNET" />
-        </config-file>
-
-        <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
-
-        <framework src="com.google.android.gms:play-services-ads-identifier:$ANDROID_PLAY_ADID_VERSION" />
-
-        <source-file src="src/android/IdfaPlugin.java"
-            target-dir="src/by/chemerisuk/cordova/advertising/" />
-    </platform>
-
 </plugin>
